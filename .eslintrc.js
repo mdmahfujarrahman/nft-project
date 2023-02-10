@@ -24,6 +24,7 @@ module.exports = {
         "react/prop-types": 0,
         quotes: [0, "single"],
         "linebreak-style": 0,
+        "react/jsx-indent": 0,
         "arrow-body-style": "off",
         "react/state-in-constructor": 0,
         "import/prefer-default-export": 0,
