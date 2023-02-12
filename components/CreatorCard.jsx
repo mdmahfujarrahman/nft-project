@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import images from "../assets";
 
-const CreatorCard = ({ rank, creatorImage, creatorName, i, creatorEths }) => {
+const CreatorCard = ({ rank, creatorImage, creatorName, creatorEths }) => {
     return (
         <div className="min-w-190 minlh:min-w-240 dark:bg-nft-gray-3 bg-white border dark:border-nft-black-3 border-nft-gray-1 rounded-3xl flex flex-col p-4 m-4">
             <div className="bg-nft-red-violet flexCenter rounded-full w-8 h-8 minlg:w-10 minlg:h-10">
@@ -34,8 +34,7 @@ const CreatorCard = ({ rank, creatorImage, creatorName, i, creatorEths }) => {
                     {creatorName}
                 </p>
                 <p className="font-poppins dark:text-white text-nft-black-1 text-sm minlg:text-base font-semibold">
-                    {creatorEths.toFixed(2)}{" "}
-                    <span className="font-normal">ETH</span>
+                    {creatorEths.toFixed(2)} <span className="normal">ETH</span>
                 </p>
             </div>
         </div>
