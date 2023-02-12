@@ -6,6 +6,25 @@ import Link from "next/link";
 
 import images from "../assets";
 
+const MenuItems = () => {
+    const genaretMenu = () => {
+
+    }
+    return (
+        <ul className={`list-none flexCenter flex-row ${isMobile && 'flex-col h-full'}`}>
+            {['Explore NFTs', 'Create NFTs', 'My NFTs', 'My Wallet'].map((item, index) => (
+                <li key={index} className="flexCenter flex-row">
+                    <Link href="/">
+                        <a className="dark:text-white text-nft-black-1 font-semibold text-lg ml-1">
+                    </Link>
+                </li>
+            ))}
+        </ul>
+    )
+}
+
+
+
 const Navbar = () => {
     const { theme, setTheme } = useTheme();
     return (
@@ -62,7 +81,11 @@ const Navbar = () => {
                     </label>
                 </div>
             </div>
-            <div>MenuItems</div>
+            <div className="md:hidden flex">
+                <ul className="list-none flexCenter flex-row">
+                    <MenuItems/>
+                </ul>
+            </div>
         </nav>
     );
 };
