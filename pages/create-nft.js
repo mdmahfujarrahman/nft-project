@@ -101,8 +101,9 @@ const CreateNft = () => {
                 />
                 <div className="mt-7 w-full flex justify-end">
                     <Button
-                        classStyle="mx-2 rounded-xl"
+                        classStyle=" rounded-xl"
                         btnName="Create Item"
+                        handleClick={() => {}}
                     />
                 </div>
             </div>
