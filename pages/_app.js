@@ -1,5 +1,6 @@
 // import components from next
 import { ThemeProvider } from "next-themes";
+import Script from "next/script";
 
 // Import components
 import { Footer, Navbar } from "../components";
@@ -14,6 +15,10 @@ const MyApp = ({ Component, pageProps }) => {
                 <Component {...pageProps} />
                 <Footer />
             </div>
+            <Script
+                src="https://kit.fontawesome.com/aa323ad745.js"
+                crossOrigin="anonymous"
+            />
         </ThemeProvider>
     );
 };
