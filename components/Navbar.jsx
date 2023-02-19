@@ -6,6 +6,7 @@ import Link from "next/link";
 
 import images from "../assets";
 import { Button } from ".";
+import { NFTContext } from "../context/NFTContext";
 
 const MenuItems = ({ active, setActive, isMobile }) => {
     const genaretLink = (i) => {
@@ -44,9 +45,9 @@ const MenuItems = ({ active, setActive, isMobile }) => {
 };
 
 const ButtonGroup = ({ setActive, router }) => {
-    const hasConnected = true;
+    const { connectWallet, currentAccount } = useContext(NFTContext);
 
-    return hasConnected ? (
+    return currentAccount ? (
         <Button
             handleClick={() => {
                 setActive("");
@@ -58,6 +59,7 @@ const ButtonGroup = ({ setActive, router }) => {
     ) : (
         <Button
             handleClick={() => {
+                connectWallet();
                 // setActive("");
                 // router.push("/create-nft");
             }}

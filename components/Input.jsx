@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { NFTContext } from "../context/NFTContext";
 
 const Input = ({ title, inputType, handleClick, placeholder }) => {
+    const { nftCurrancy } = useContext(NFTContext);
     return (
         <div className="mt-16">
             <p className="font-poppins dark:text-white text-nft-black-1 font-semibold text-xl">
