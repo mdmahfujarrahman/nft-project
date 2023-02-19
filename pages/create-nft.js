@@ -6,8 +6,10 @@ import { useDropzone } from "react-dropzone";
 import Image from "next/image";
 import images from "../assets";
 import { Button, Input } from "../components";
+import { NFTContext } from "../context/NFTContext";
 
 const CreateNft = () => {
+    const { uploadToIPFS } = useContext(NFTContext)
     const { theme } = useTheme();
     const [fileUrl, setFileUrl] = useState(null);
     const [formInput, setFormInput] = useState({
@@ -17,7 +19,11 @@ const CreateNft = () => {
     });
     console.log(formInput);
 
-    const onDrop = useCallback(() => {}, []);
+    const onDrop = useCallback(async (acceptedFile) => {
+        const url = await uploadToIPFS(acceptedFile)
+        console.log(url);
+        setFileUrl(url)
+    }, []);
 
     const {
         getRootProps,
@@ -118,7 +124,7 @@ const CreateNft = () => {
                     <Button
                         classStyle=" rounded-xl"
                         btnName="Create Item"
-                        handleClick={() => {}}
+                        handleClick={() => { }}
                     />
                 </div>
             </div>
