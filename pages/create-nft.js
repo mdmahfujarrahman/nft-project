@@ -10,6 +10,12 @@ import { Button, Input } from "../components";
 const CreateNft = () => {
     const { theme } = useTheme();
     const [fileUrl, setFileUrl] = useState(null);
+    const [formInput, setFormInput] = useState({
+        name: "",
+        description: "",
+        price: "",
+    });
+    console.log(formInput);
 
     const onDrop = useCallback(() => {}, []);
 
@@ -85,19 +91,28 @@ const CreateNft = () => {
                     inputType="input"
                     title="Name"
                     placeholder="Enter NFT Name"
-                    handleClick={() => {}}
+                    handleClick={(e) =>
+                        setFormInput({ ...formInput, name: e.target.value })
+                    }
                 />
                 <Input
                     inputType="textarea"
                     title="Description"
                     placeholder="Decription of your NFTs"
-                    handleClick={() => {}}
+                    handleClick={(e) =>
+                        setFormInput({
+                            ...formInput,
+                            description: e.target.value,
+                        })
+                    }
                 />
                 <Input
                     inputType="number"
                     title="Price"
                     placeholder="Enter Price"
-                    handleClick={() => {}}
+                    handleClick={(e) =>
+                        setFormInput({ ...formInput, price: e.target.value })
+                    }
                 />
                 <div className="mt-7 w-full flex justify-end">
                     <Button
